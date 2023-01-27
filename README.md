@@ -30,3 +30,4 @@
 
 
 Аналитика и оценка проекта - [Google Docs](https://docs.google.com/document/d/1SRsy1MeXleZJSUzGBcLxID2DwRN5u4SCSIJswNrg-pY/edit?usp=sharing)
+[Confluence](https://casdsadsa.atlassian.net/l/cp/110pqxfH)
