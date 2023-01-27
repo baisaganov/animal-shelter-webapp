@@ -27,3 +27,5 @@
 - Рожапов Рамзан - Разработчик БД
 - Ергали Дияр - Frontend разработчик
 - Байсаганов Алишер - Backend разработчик
+
+- Аналитика и оценка проекта - [Google Docs](https://docs.google.com/document/d/1SRsy1MeXleZJSUzGBcLxID2DwRN5u4SCSIJswNrg-pY/edit?usp=sharing)
