@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ru" xmlns:th = "http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.108.0">
+  <title>О ПРИЮТЕ – Приют для животных "Красная Сосна"</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/carousel.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" th:href="@{/}">Главная</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" th:href="@{/about/}" >О ПРИЮТЕ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/catalog/}">ПИТОМЦЫ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/help/}">ПОМОЩЬ НАМ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/contact/}">КОНТАКТЫ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!--  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">-->
+<!--    <div class="carousel-indicators">-->
+<!--      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+<!--      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+<!--      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+<!--    </div>-->
+<!--    <div class="carousel-inner">-->
+<!--      <div class="carousel-item active">-->
+<!--        &lt;!&ndash;                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </svg>&ndash;&gt;-->
+<!--        <img src="/img/5be9e9es-960.jpg" class="img-thumbnail mx-auto d-block img-fluid"/>-->
+<!--        <div class="container">-->
+
+<!--          <div class="carousel-caption">-->
+
+<!--            <h1>Example headline.</h1>-->
+<!--            <p>Some representative placeholder content for the first slide of the carousel.</p>-->
+<!--            <p><a class="btn btn-lg btn-primary" href="#">Подробнее...</a></p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">-->
+<!--      <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--      <span class="visually-hidden">Previous</span>-->
+<!--    </button>-->
+<!--    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">-->
+<!--      <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--      <span class="visually-hidden">Next</span>-->
+<!--    </button>-->
+<!--  </div>-->
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing mt-5 mx-auto">
+
+    <!-- Three columns of text below the carousel -->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-4">-->
+<!--        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">-->
+<!--          <title>Placeholder</title>-->
+<!--          <rect width="100%" height="100%" fill="#777"/>-->
+<!--          <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>-->
+<!--          <image height="140" width="140" xlink:href="/img/207ebf0aaf192be3e061599ddafed30c_300_300.jpeg"></image>-->
+<!--        </svg>-->
+<!--        <h2 class="fw-normal">КОШКИ</h2>-->
+<!--        &lt;!&ndash;                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>&ndash;&gt;-->
+<!--        <p><a class="btn btn-secondary" href="#">Выбрать! &raquo;</a></p>-->
+<!--      </div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+
+<!--      <div class="col-lg-4">-->
+<!--        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="true">-->
+<!--          <title>Placeholder</title>-->
+<!--          <rect width="100%" height="100%" fill="#777"/>-->
+<!--          <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>-->
+<!--          <image height="140" width="140" xlink:href="/img/c6EFgWpYjFjubTjuto1OoH7mQfTiugjY.jpeg"/>-->
+<!--        </svg>-->
+<!--        <h2 class="fw-normal">СОБАКИ</h2>-->
+<!--        &lt;!&ndash;                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>&ndash;&gt;-->
+<!--        <p><a class="btn btn-secondary" href="#">Выбрать! &raquo;</a></p>-->
+<!--      </div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+
+<!--      <div class="col-lg-4">-->
+<!--        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">-->
+<!--          <title>Placeholder</title>-->
+<!--          <rect width="100%" height="100%" fill="#777"/>-->
+<!--          <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>-->
+<!--          <image height="140" width="140" th:href="@{/img/db268475-7ebe-4531-97e2-44bc1e394f77_1615026854799.jpeg}"/>-->
+<!--        </svg>-->
+<!--        <h2 class="fw-normal">ДРУГИЕ</h2>-->
+<!--        &lt;!&ndash;                <p>And lastly this, the third column of representative placeholder content.</p>&ndash;&gt;-->
+<!--        <p><a class="btn btn-secondary" href="#">Выбрать! &raquo;</a></p>-->
+<!--      </div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+<!--    </div>&lt;!&ndash; /.row &ndash;&gt;-->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h1 class="featurette-heading fw-normal lh-5">О ПРИЮТЕ</span></h1>
+        <p class="lead">Приют для бездомных собак «Красная Сосна» — это московский муниципальный приют.
+          Здесь содержатся ~30 бездомных, потерянных или брошенных собак. Приют функционирует с 2009 года.</p>
+        <p class="bg-danger lead text-white">Собаки попадают в приют только посредством отлова, проводимого в рамках специальной
+          государственной программы. Приют НЕ принимает собак от населения.</p>
+
+        <p class="lead">Несмотря на то что приюты для бездомных собак в Москве финансируется государством, условия содержания
+          животных зачастую оставляют желать лучшего. Существование приюта невозможно представить без активной
+          помощи волонтёров.</p>
+
+        <br>
+        <p class="lead">Для бездомных животных приют — это место, где они ждут хозяев порой до конца своей жизни.
+          Находящиеся в приюте животные испытывают острый недостаток внимания: в вольерах размером 2 × 4 метра
+          содержатся по 6 собак!
+          Обеспечить 300 голов правильным рационом питания достаточно сложно, индивидуальный подход к каждому животному
+          невозможен без активного участия неравнодушных людей.</p>
+
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#fff"/>
+          <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+          <image height="500" width="500" th:href="@{/img/about_1.jpeg}"/>
+        </svg>
+        <!--                <img  src="/img/dog.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="...">-->
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h1 class="featurette-heading fw-normal lh-1">СИСТЕМА ОПЕКУНСТВА</span></h1>
+        <p class="lead">К огромному сожалению, в нашей стране людей, готовых приютить собаку из приюта, мало.
+          Хотя собака из приюта ничем не хуже породистой! Именно поэтому волонтёрам необходимо активно заниматься
+          пиаром животных. Нужны качественные фотографии, хорошие тексты с описанием, а также постоянные размещения
+          объявлений «собака в добрые руки» — в интернете, газетных изданиях и альтернативных источниках.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#fff"/>
+          <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+          <image height="500" width="500" th:href="@{/img/about_2.jpeg}"/>
+        </svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+   <div class="container bg-danger text-center">
+     <br>
+     <h2 class="text-white mx-auto">Наша цель — пристроить максимальное количество собак в добрые руки, потому что
+       каждая приютская собака мечтает о семье и доме.</h2>
+     <br>
+   </div>
+    <br>
+
+    <div class="container">
+      <h4>Если вы очень хотите собаку, но не имеете возможности взять собаку из приюта, для вас существует
+        <span class="font-weight-bold">специальная система опекунства</span>, которая позволяет выбрать определенное животное и оказывать ему посильную помощь:
+        выгуливать, навещать, ухаживать, заботиться о здоровье.</h4>
+      <br>
+
+
+      <h4 class="">Большинству собак больше всего не хватает именно общения, поэтому они будут очень благодарны, если вы хотя бы
+        несколько раз в месяц будете уделять им пару часов своего драгоценного времени. Вам не нужно бросать все
+        дела и постоянно быть в приюте, начните с малого: съездите, познакомьтесь, выберите себе животное, которое
+        хотите опекать, и навещайте его по мере возможности.</h4>
+    </div>
+    <br>
+
+    <div class="container bg-danger text-center">
+      <br>
+      <h2 class="text-white mx-auto">Даже если вы лишь один раз сможете посетить приют и пообщаться с собаками,
+        то уже сделаете доброе дело! А если появятся предложения или вопросы, мы готовы и рады обсудить их вместе. Собакам всегда не хватает внимания, а нам — волонтёров!</h2>
+      <br>
+    </div>
+
+
+
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Наверх</a></p>
+    <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+
+
+<!--<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>-->
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+</body>
+</html>

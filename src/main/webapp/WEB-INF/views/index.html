@@ -1,1 +1,340 @@
-<html></html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="ru" xmlns:th = "http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">-->
+<!--    <title>Главная страница</title>-->
+<!--    <link rel="stylesheet" th:href="@{../css/product.css}" />-->
+<!--</head>-->
+<!--<body class="d-flex h-100 text-center text-bg-dark">-->
+
+<!--<div class="container">-->
+<!--    <header class="d-flex justify-content-center py-3">-->
+<!--        <ul class="nav nav-pills">-->
+<!--            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">О ПРИЮТЕ</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link">ПИТОМЦЫ</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link">ПОМОЩЬ НАМ</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link">КОНТАКТЫ</a></li>-->
+<!--&lt;!&ndash;            <li class="nav-item"><a href="#" class="nav-link">About</a></li>&ndash;&gt;-->
+<!--        </ul>-->
+<!--    </header>-->
+<!--</div>-->
+
+
+<!--<div class="container">-->
+<!--    <footer class="py-3 my-4">-->
+<!--        <ul class="nav justify-content-center border-bottom pb-3 mb-3">-->
+<!--            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">О ПРИЮТЕ</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ПИТОМЦЫ</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ПОМОЩЬ НАМ</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">КОНТАКТЫ</a></li>-->
+<!--&lt;!&ndash;            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>&ndash;&gt;-->
+<!--        </ul>-->
+<!--        <p class="text-center text-muted">&copy; 2023</p>-->
+<!--    </footer>-->
+<!--</div>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="ru" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Приют для животных "Красная Сосна"</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="../css/carousel.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Главная</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/about}">О ПРИЮТЕ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/catalog/}">ПИТОМЦЫ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/help/}">ПОМОЩЬ НАМ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contact}">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+<!--                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>-->
+<!--                </svg>-->
+                <img src="/img/5be9e9es-960.jpg" class="img-thumbnail mx-auto d-block img-fluid"/>
+                <div class="container">
+
+                    <div class="carousel-caption">
+
+                        <h1>Example headline.</h1>
+                        <p>Some representative placeholder content for the first slide of the carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Подробнее...</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+<!--                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">-->
+<!--                    <rect width="100%" height="100%" fill="#777"/>-->
+<!--                </svg>-->
+                <img src="/img/EP3hsx_W4AEgZdn.jpg" class="img-thumbnail mx-auto d-block img-fluid"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Another example headline.</h1>
+                        <p>Some representative placeholder content for the second slide of the carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+<!--                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>-->
+                <img src="/img/5be9e9es-960.jpg" class="img-thumbnail mx-auto d-block img-fluid"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>One more for good measure.</h1>
+                        <p>Some representative placeholder content for the third slide of this carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing mt-5 mx-auto">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#777"/>
+                    <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+                    <image height="140" width="140" xlink:href="/img/207ebf0aaf192be3e061599ddafed30c_300_300.jpeg"></image>
+                </svg>
+                <h2 class="fw-normal">КОШКИ</h2>
+<!--                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>-->
+                <p><a class="btn btn-secondary" href="#">Выбрать! &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="true">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#777"/>
+                    <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+                    <image height="140" width="140" xlink:href="/img/c6EFgWpYjFjubTjuto1OoH7mQfTiugjY.jpeg"/>
+                </svg>
+                <h2 class="fw-normal">СОБАКИ</h2>
+<!--                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>-->
+                <p><a class="btn btn-secondary" href="#">Выбрать! &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#777"/>
+                    <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+                    <image height="140" width="140" th:href="@{/img/db268475-7ebe-4531-97e2-44bc1e394f77_1615026854799.jpeg}"/>
+                </svg>
+                <h2 class="fw-normal">ДРУГИЕ</h2>
+<!--                <p>And lastly this, the third column of representative placeholder content.</p>-->
+                <p><a class="btn btn-secondary" href="#">Выбрать! &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">Каждому питомцу <span class="text-muted">Нужен свой дом!</span></h2>
+                <p class="lead">Найдите своего питомца в нашем приюте и заберите его абсолютно БЕСПЛАТНО.
+                    На сайте собрана информация о бездомных животных в нашем приюте.
+                    Используя его, вы с легкостью сможете найти и приютить подходящего вам питомца.</p>
+            </div>
+            <div class="col-md-5">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#eee"/>
+                    <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+                    <image height="500" width="500" th:href="@{/img/artworks-000180372345-qm7kxi-t500x500.jpeg}"/>
+                </svg>
+<!--                <img  src="/img/dog.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="...">-->
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading fw-normal lh-1">Мы нашли семью <span class="text-muted">N питомцам.</span></h2>
+                <p class="lead">A именно:
+                    <br> x собак,
+                <br>у кошек,
+                <br>z других видов животных.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#eee"/>
+                    <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+                    <image height="500" width="500" th:href="@{/img/artworks-SfCKQa4H1s4hSP9Z-S5UeWw-t500x500.jpg}"/>
+                </svg>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">Нам нужная твоя <span class="text-muted">ПОМОЩЬ!.</span></h2>
+                <p class="lead">Ещё один простой способ помочь животным, не имеющим дома, — это передать для них корма, медикаменты или амуницию.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#eee"/>
+                    <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+                    <image height="500" width="500" th:href="@{/img/ybX7uMbKNOY.jpg}"/>
+                </svg>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-end"><a href="#">Наверх</a></p>
+        <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+</main>
+
+
+<!--<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>-->
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+</body>
+</html>
