@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="animal-shelter-webapp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>animal-shelter-webapp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="spring-mvc-first-app.war">
+      <element id="artifact" artifact-name="animal-shelter-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>
