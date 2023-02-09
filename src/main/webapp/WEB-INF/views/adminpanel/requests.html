@@ -1,10 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru" xmlns:th = "http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Заявки</title>
+
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}">Главная</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" th:href="@{/login/home(username=${admin.getName()}, password=${admin.getPassword()})}">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/login/requests(username=${admin.getName()}, password=${admin.getPassword()})}">Заявки</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h2>Собаки</h2>
+        <div th:if="${dogRequests.size()==0}">
+            <div>Заявок нет</div>
+        </div>
+        <div th:unless="${dogRequests.size()==0}" class="accordion accordion-flush" th:each="reqDog: ${dogRequests}" th:id="${reqDog.getId()}+'accordionFlushExample'+'dog'" >
+            <div class="accordion-item">
+                <h2 class="accordion-header" th:id="'flush-headingOne'+${reqDog.getId()}+'dog'">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#flush-collapseOne'+${reqDog.getId()}+'dog'" aria-expanded="false" th:aria-controls="'flush-collapseOne'+${reqDog.getId()}+'dog'" th:text="'Заявка №'+${reqDog.getId()}">
+                    </button>
+                </h2>
+                <div th:id="'flush-collapseOne'+${reqDog.getId()}+'dog'" class="accordion-collapse collapse bg-info" th:aria-labelledby="'flush-headingOne'+${reqDog.getId()}+'dog'" th:data-bs-parent="'#'+${reqDog.getId()}+'accordionFlushExample'+'dog'">
+                    <div class="accordion-body">
+                        <h3>Информация о Пользователе</h3>
+                        <p th:text="'Имя: '+${reqDog.getName()}"></p>
+                        <p th:text="'Номер телефона: '+${reqDog.getTel()}"></p><br>
+                        <h3>Информация о питомце</h3>
+                        <p th:text="'Кличка, возраст: '+${reqDog.getDog().getName()}+', '+${reqDog.getDog().getAge()}"></p>
+                        <p th:text="${reqDog.getDog().getGender()==1} ? 'Пол: Мальчик' : 'Пол: Девочка'" />
+                        <form th:action="@{/login/requests/{id}/done(username=${admin.getName()}, password=${admin.getPassword()}, id=${reqDog.getId()})}" th:method="POST">
+                            <button type="submit" class="btn btn-success">Отменить заявку</button>
+                        </form>
+                        <form th:action="@{/login/requests/{id}/delete(username=${admin.getName()}, password=${admin.getPassword()}, id=${reqDog.getId()})}" th:method="POST">
+                            <button type="submit" class="btn btn-warning">Заявка выполнена</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Кошки</h2>
+        <div th:if="${catRequests.size()==0}">
+            <div>Заявок нет</div>
+        </div>
+        <div th:unless="${catRequests.size()==0}"  class="accordion accordion-flush" th:each="req: ${catRequests}" th:id="${req.getId()}+'accordionFlushExample'" >
+            <div class="accordion-item">
+                <h2 class="accordion-header" th:id="'flush-headingOne'+${req.getId()}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#flush-collapseOne'+${req.getId()}" aria-expanded="false" th:aria-controls="'flush-collapseOne'+${req.getId()}" th:text="'Заявка №'+${req.getId()}">
+                    </button>
+                </h2>
+                <div th:id="'flush-collapseOne'+${req.getId()}" class="accordion-collapse collapse bg-info" th:aria-labelledby="'flush-headingOne'+${req.getId()}" th:data-bs-parent="'#'+${req.getId()}+'accordionFlushExample'">
+                    <div class="accordion-body">
+                        <h3>Информация о Пользователе</h3>
+                        <p th:text="'Имя: '+${req.getName()}"></p>
+                        <p th:text="'Номер телефона: '+${req.getTel()}"></p><br>
+                        <h3>Информация о питомце</h3>
+                        <p th:text="'Кличка, возраст: '+${req.getCat().getName()}+', '+${req.getCat().getAge()}"></p>
+                        <p th:text="${req.getCat().getGender()==1} ? 'Пол: Мальчик' : 'Пол: Девочка'" />
+                        <form th:action="@{/login/requests/cat/{id}/cancel(username=${admin.getName()}, password=${admin.getPassword()}, id=${req.getId()})}" th:method="POST" th:object="${catRequestDone}">
+                            <button type="submit" class="btn btn-success">Отменить заявку</button>
+                        </form>
+
+                        <form th:action="@{/login/requests/cat/{id}/delete(username=${admin.getName()}, password=${admin.getPassword()}, id=${req.getId()})}" th:method="POST" th:object="${catRequestDone}">
+                            <button type="submit" class="btn btn-warning">Заявка выполнена</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
