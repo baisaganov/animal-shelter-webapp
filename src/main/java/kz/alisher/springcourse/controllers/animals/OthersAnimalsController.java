@@ -38,6 +38,4 @@ public class OthersAnimalsController {
         return "redirect:/catalog/others/";
 
     }
-
-
 }

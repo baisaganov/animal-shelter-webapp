@@ -1,5 +1,7 @@
 package kz.alisher.springcourse.dao;
 
+import kz.alisher.springcourse.models.Cat;
+import kz.alisher.springcourse.models.CatRequest;
 import kz.alisher.springcourse.models.Others;
 import kz.alisher.springcourse.models.OthersRequest;
 import org.hibernate.Session;

@@ -1,5 +1,6 @@
 package kz.alisher.springcourse.dao;
 
+import kz.alisher.springcourse.models.Cat;
 import kz.alisher.springcourse.models.Others;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

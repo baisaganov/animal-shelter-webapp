@@ -1,6 +1,7 @@
 package kz.alisher.springcourse.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name = "cat_requests")

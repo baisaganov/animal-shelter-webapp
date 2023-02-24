@@ -2,6 +2,8 @@ package kz.alisher.springcourse.controllers.animals;
 
 import kz.alisher.springcourse.dao.CatDAO;
 import kz.alisher.springcourse.dao.CatRequestsDAO;
+import kz.alisher.springcourse.dao.DogDAO;
+import kz.alisher.springcourse.dao.RequestsDAO;
 import kz.alisher.springcourse.models.CatRequest;
 import kz.alisher.springcourse.models.DogRequest;
 import org.springframework.beans.factory.annotation.Autowired;

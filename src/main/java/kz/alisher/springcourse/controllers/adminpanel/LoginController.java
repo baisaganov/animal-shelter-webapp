@@ -82,12 +82,12 @@ public class LoginController {
         return "adminpanel/cat_edit";
     }
 
-    @GetMapping("/{id}/others_edit")
+    @GetMapping("/home/others/{id}/edit")
     public String othersEdit(@RequestParam String username, @RequestParam String password, Model model, @PathVariable("id") int id){
         Admin admin = new Admin(0,username,password);
         model.addAttribute("admin", admin);
-        model.addAttribute("others", othersDAO.getOthers(id));
-        return "adminpanel/dog_edit";
+        model.addAttribute("other", othersDAO.getOthers(id));
+        return "adminpanel/other_edit";
     }
 
     /** ________________________________CATALOG EDIT________________________________*/
@@ -112,8 +112,6 @@ public class LoginController {
         return "redirect:/login/home?username=" + username + "&password=" + password;
     }
 
-
-//    TODO: add others edit mapping
     @PostMapping ("/home/others/{id}/edit")
     public String othersEditPatching(@RequestParam String username,
                                   @RequestParam String password,
@@ -147,9 +145,7 @@ public class LoginController {
         return "redirect:/login/home?username=" + username + "&password=" + password;
     }
 
-//    TODO: add others delete mapping
-
-    @PostMapping("/home/others/{id}/delete")
+    @PostMapping("/home/other/{id}/delete")
     public String othersDelete(@RequestParam String username,
                             @RequestParam String password,
                             @ModelAttribute("others") Others others,
@@ -198,20 +194,20 @@ public class LoginController {
 
 
 
-    @GetMapping("/home/others/new")
+    @GetMapping("/home/other/new")
     public String createOthers(@RequestParam String username,
                             @RequestParam String password,
                             @ModelAttribute("others") Others others,
                             Model model){
-        model.addAttribute("others", new Others());
+        model.addAttribute("other", new Others());
         model.addAttribute("admin", new Admin(0, username, password));
-        return "adminpanel/new_others";
+        return "adminpanel/new_other";
     }
 
-    @PostMapping("/home/others/new")
+    @PostMapping("/home/other/new")
     public String createNewOthers(@RequestParam String username,
                                @RequestParam String password,
-                               @ModelAttribute("others") Others others){
+                               @ModelAttribute("other") Others others){
         othersDAO.addNew(others);
         return "redirect:/login/home?username=" + username + "&password=" + password;
     }

@@ -2,6 +2,7 @@ package kz.alisher.springcourse.models;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "dogs")
@@ -25,7 +26,7 @@ public class Dog implements Pets {
     private String description;
 
     @Column(name = "photo_name")
-    private String photo_name;
+    private String photo_name = "/img/dog.jpg";
 
     @OneToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
