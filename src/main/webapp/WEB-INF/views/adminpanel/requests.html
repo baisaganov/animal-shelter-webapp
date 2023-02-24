@@ -97,6 +97,39 @@
 
         </div>
     </div>
+
+    <div class="container">
+        <h2>Другие животные</h2>
+        <div th:if="${othersRequests.size()==0}">
+            <div>Заявок нет</div>
+        </div>
+        <div th:unless="${othersRequests.size()==0}"  class="accordion accordion-flush" th:each="req: ${othersRequests}" th:id="${req.getId()}+'accordionFlushExample'" >
+            <div class="accordion-item">
+                <h2 class="accordion-header" th:id="'flush-headingOne'+${req.getId()}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#flush-collapseOne'+${req.getId()}" aria-expanded="false" th:aria-controls="'flush-collapseOne'+${req.getId()}" th:text="'Заявка №'+${req.getId()}">
+                    </button>
+                </h2>
+                <div th:id="'flush-collapseOne'+${req.getId()}" class="accordion-collapse collapse bg-info" th:aria-labelledby="'flush-headingOne'+${req.getId()}" th:data-bs-parent="'#'+${req.getId()}+'accordionFlushExample'">
+                    <div class="accordion-body">
+                        <h3>Информация о Пользователе</h3>
+                        <p th:text="'Имя: '+${req.getName()}"></p>
+                        <p th:text="'Номер телефона: '+${req.getTel()}"></p><br>
+                        <h3>Информация о питомце</h3>
+                        <p th:text="'Кличка, возраст: '+${req.getOthers().getName()}+', '+${req.getOthers().getAge()}"></p>
+                        <p th:text="${req.getOthers().getGender()==1} ? 'Пол: Мальчик' : 'Пол: Девочка'" />
+                        <form th:action="@{/login/requests/others/{id}/cancel(username=${admin.getName()}, password=${admin.getPassword()}, id=${req.getId()})}" th:method="POST" th:object="${othersRequestDone}">
+                            <button type="submit" class="btn btn-success">Отменить заявку</button>
+                        </form>
+
+                        <form th:action="@{/login/requests/others/{id}/delete(username=${admin.getName()}, password=${admin.getPassword()}, id=${req.getId()})}" th:method="POST" th:object="${othersRequestDone}">
+                            <button type="submit" class="btn btn-warning">Заявка выполнена</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
